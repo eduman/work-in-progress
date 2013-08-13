@@ -58,6 +58,12 @@ public class User {
 		Collections.sort(sortedList, com);
 		return sortedList;
 	}
+	
+	public User cleare(){
+		this.followedSeries.clear();
+		this.lastUpdate = new Date();
+		return this;
+	}
 
 	
 	@Override

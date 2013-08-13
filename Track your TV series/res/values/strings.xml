@@ -27,6 +27,8 @@
     <string name="preference_data_roaming">Mobile Data</string>
     <string name="preference_clear_memory_cache">Clear memory cache</string>
     <string name="preference_clear_disc_cache">Clear disc cache</string>
+    <string name="preference_clear_image_cache">Clear image cache</string>
+    <string name="preference_user_data_cache">Delete all followed Series</string>
     <string name="preference_category_cacheSettings">Cache Settings</string>
     <string name="preference_category_debug">Debug</string>
     <string name="preference_debug">Print debug messages</string>
@@ -34,6 +36,10 @@
     <string name="preference_clearedDiscCacheMsg">Disc cache cleared</string>
     <string name="preference_clearMemoryCacheMsg">Do you really want to clear the memory cache? This will erase all the stored posters about followed series</string>
     <string name="preference_clearedMemoryCacheMsg">Memory cache cleared</string>
+    <string name="preference_clearImageCacheMsg">Do you really want to clear the image cache? This will erase all the stored posters about followed series</string>
+    <string name="preference_clearedImageCacheMsg">Image cache cleared</string>
+    <string name="preference_clearUserCacheMsg">Do you really want to cancel all the followed series list?</string>
+    <string name="preference_clearedUserCacheMsg">Followed series list deleted</string>
 
     <!-- Preference category keys -->
     <string name="preference_category_internetSettings_key">preference_category_internetSettings_key</string>
@@ -44,6 +50,8 @@
     <string name="preference_data_roamingSettings_key">preference_3gSettings_key</string>
     <string name="preference_clear_memory_cache_key">preference_clear_memory_cache_key</string>
     <string name="preference_clear_disc_cache_key">preference_clear_disc_cache_key</string>
+    <string name="preference_clear_image_cache_key">preference_clear_image_cache_key</string>
+    <string name="preference_user_data_cache_key">preference_user_data_cache_key</string>
     <string name="preference_debug_key">preference_debug_key</string>
 
     <!-- About search_fragment -->
@@ -66,13 +74,13 @@
     <!-- Info Messages -->
     <string name="info">Info</string>
     <string name="unfollowFollowedSerie">Do you really want to unfollow the TV serie?</string>
-    <string name="serieAddedInFollowingInfo">Now you are following the serie \"%1$s\" with the id: %2$s</string>
+    <string name="serieAddedInFollowingInfo">Now you are following the serie \"%1$s\".</string>
     <string name="searchedSerieNotFound">Can not find any TV series</string>
     <string name="unableToFollowSearchedSerie">Unable to follow the selected serie</string>
 
     <!-- Error Messages -->
     <string name="error">Error</string>
     <string name="searchByTitleInsertError">Enter the TV serie\'s title to be searched</string>
-    <string name="serieAlreadyFollowedError">The serie \"%1$s\" with the id: %2$s is already followed</string>
-
+    <string name="serieAlreadyFollowedError">The serie \"%1$s\" is already followed</string>
+	<string name="internetConnectionErr">The Interet Connection is missing. Please enable it.</string>
 </resources>

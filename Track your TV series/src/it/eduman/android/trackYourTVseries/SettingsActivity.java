@@ -3,6 +3,7 @@ package it.eduman.android.trackYourTVseries;
 import it.eduman.android.commons.utilities.ActionTask;
 import it.eduman.android.commons.utilities.SoftwareUtilities;
 import it.eduman.android.trackYourTVseries.commons.TrackYourTVseriesImageLoader;
+import it.eduman.android.trackYourTVseries.core.User;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -49,55 +50,131 @@ public class SettingsActivity extends PreferenceActivity{
 					return true;
 				}
 			});
-
-			Preference clearMemoryCache = 
-					(Preference) findPreference(getResources().getString(
-							R.string.preference_clear_memory_cache_key));
-			clearMemoryCache.setOnPreferenceClickListener(new OnPreferenceClickListener() {
+			
+			Preference clearUserData = (Preference) findPreference(getResources().getString(
+					R.string.preference_user_data_cache_key));
+			clearUserData.setOnPreferenceClickListener(new OnPreferenceClickListener() {
 				@Override
 				public boolean onPreferenceClick(Preference preference) {
 					SoftwareUtilities.MyInfoDialogFactory(
-							context, R.string.preference_clearMemoryCacheMsg, true, new ActionTask() {
+							context, R.string.preference_clearUserCacheMsg, true, new ActionTask() {
+
+						@Override
+						public void onPositiveResponse() {
+							User user = StoreUtilities.getUser(context);
+							user.cleare();
+							StoreUtilities.saveUser(context, user);
+							FollowedSeriesSectionFragment.isToBeUpdated = true;
+							SoftwareUtilities.shortToast(context, R.string.preference_clearedUserCacheMsg);
+
+						}
+
+						@Override
+						public void onNegativeResponse() {
+							// Nothing to do 
+						}
+						
+						@Override
+						public void onNeutralResponse() {
+							// Nothing to do
+						}
+					});
+					return true;
+				}
+			});
+			
+			
+			Preference clearImageCache = 
+					(Preference) findPreference(getResources().getString(
+							R.string.preference_clear_image_cache_key));
+			clearImageCache.setOnPreferenceClickListener(new OnPreferenceClickListener() {
+				@Override
+				public boolean onPreferenceClick(Preference preference) {
+					SoftwareUtilities.MyInfoDialogFactory(
+							context, R.string.preference_clearImageCacheMsg, true, new ActionTask() {
 
 						@Override
 						public void onPositiveResponse() {
 							TrackYourTVseriesImageLoader.imageLoader.clearMemoryCache();
-							SoftwareUtilities.shortToast(context, R.string.preference_clearedMemoryCacheMsg);
-
-						}
-
-						@Override
-						public void onNegativeResponse() {
-							// Nothing to do 
-						}
-					});
-					return true;
-				}
-			});
-
-			Preference clearDiscCache = 
-					(Preference) findPreference(getResources().getString(
-							R.string.preference_clear_disc_cache_key));
-			clearDiscCache.setOnPreferenceClickListener(new OnPreferenceClickListener() {
-				@Override
-				public boolean onPreferenceClick(Preference preference) {
-					SoftwareUtilities.MyInfoDialogFactory(
-							context, R.string.preference_clearDiscCacheMsg, true, new ActionTask() {
-
-						@Override
-						public void onPositiveResponse() {
 							TrackYourTVseriesImageLoader.imageLoader.clearDiscCache();
-							SoftwareUtilities.shortToast(context, R.string.preference_clearedDiscCacheMsg);
+							SoftwareUtilities.shortToast(context, R.string.preference_clearedImageCacheMsg);
+
 						}
 
 						@Override
 						public void onNegativeResponse() {
 							// Nothing to do 
 						}
+						
+						@Override
+						public void onNeutralResponse() {
+							// Nothing to do
+						}
 					});
 					return true;
 				}
 			});
+			
+			
+
+//			Preference clearMemoryCache = 
+//					(Preference) findPreference(getResources().getString(
+//							R.string.preference_clear_images_cache_key));
+//			clearMemoryCache.setOnPreferenceClickListener(new OnPreferenceClickListener() {
+//				@Override
+//				public boolean onPreferenceClick(Preference preference) {
+//					SoftwareUtilities.MyInfoDialogFactory(
+//							context, R.string.preference_clearMemoryCacheMsg, true, new ActionTask() {
+//
+//						@Override
+//						public void onPositiveResponse() {
+//							TrackYourTVseriesImageLoader.imageLoader.clearMemoryCache();
+//							SoftwareUtilities.shortToast(context, R.string.preference_clearedMemoryCacheMsg);
+//
+//						}
+//
+//						@Override
+//						public void onNegativeResponse() {
+//							// Nothing to do 
+//						}
+//						
+//						@Override
+//						public void onNeutralResponse() {
+//							// Nothing to do
+//						}
+//					});
+//					return true;
+//				}
+//			});
+//
+//			Preference clearDiscCache = 
+//					(Preference) findPreference(getResources().getString(
+//							R.string.preference_clear_disc_cache_key));
+//			clearDiscCache.setOnPreferenceClickListener(new OnPreferenceClickListener() {
+//				@Override
+//				public boolean onPreferenceClick(Preference preference) {
+//					SoftwareUtilities.MyInfoDialogFactory(
+//							context, R.string.preference_clearDiscCacheMsg, true, new ActionTask() {
+//
+//						@Override
+//						public void onPositiveResponse() {
+//							TrackYourTVseriesImageLoader.imageLoader.clearDiscCache();
+//							SoftwareUtilities.shortToast(context, R.string.preference_clearedDiscCacheMsg);
+//						}
+//
+//						@Override
+//						public void onNegativeResponse() {
+//							// Nothing to do 
+//						}
+//						
+//						@Override
+//						public void onNeutralResponse() {
+//							// Nothing to do
+//						}
+//					});
+//					return true;
+//				}
+//			});
 		}
 	}
 

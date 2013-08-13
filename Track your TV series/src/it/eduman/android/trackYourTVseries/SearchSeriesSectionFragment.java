@@ -2,6 +2,7 @@ package it.eduman.android.trackYourTVseries;
 
 import it.eduman.android.commons.utilities.ActionTask;
 import it.eduman.android.commons.utilities.ErrorUtilities;
+import it.eduman.android.commons.utilities.HardwareUtilities;
 import it.eduman.android.commons.utilities.SoftwareUtilities;
 import it.eduman.android.trackYourTVseries.ViewHolder.SearchedViewHolder;
 import it.eduman.android.trackYourTVseries.commons.TrackYourTVseriesImageLoader;
@@ -224,11 +225,19 @@ public class SearchSeriesSectionFragment extends MyFragment {
 
 				@Override
 				public void onNegativeResponse() {}
+				
+				@Override
+				public void onNeutralResponse() {}
 			});
 		} else {
 			//TODO verificare connessione ad internet
 			clearListView();
-			new AsyncSearch(rootView).execute(searchEditText.getText().toString());
+			if (HardwareUtilities.isConnected(rootView.getContext()))
+				new AsyncSearch(rootView).execute(searchEditText.getText().toString());
+			else {
+				HardwareUtilities.enableInternetConnectionAlertDialog(
+						rootView.getContext(), true, true);
+			}
 		}
 
 
@@ -340,7 +349,7 @@ public class SearchSeriesSectionFragment extends MyFragment {
 				StoreUtilities.saveUser(view.getContext(), user);
 				String msg = String.format(
 						view.getResources().getString(R.string.serieAddedInFollowingInfo), 
-						holder.title.getText().toString(),seriesIDtoBeAdded);
+						holder.title.getText().toString());
 				holder.button.setText(R.string.searchedSeriesListRow_followedButton);
 				SoftwareUtilities.MyInfoDialogFactory(view.getContext(), msg);
 				FollowedSeriesSectionFragment.isToBeUpdated = true; 
@@ -417,12 +426,17 @@ public class SearchSeriesSectionFragment extends MyFragment {
 							if (!updatedUser.getFollowedSeries().containsKey(toBeAdded) && 
 									resultsHasMap.containsKey(toBeAdded)){
 								//TODO check internet connession
-								(new AsyncSaveSeason(rootView, holder)).execute(toBeAdded);
+								if (HardwareUtilities.isConnected(rootView.getContext()))
+									(new AsyncSaveSeason(rootView, holder)).execute(toBeAdded);
+								else {
+									HardwareUtilities.enableInternetConnectionAlertDialog(
+											rootView.getContext(), true, true);
+								}
 
 							} else {
 								String msg = String.format(
 										v.getResources().getString(R.string.serieAlreadyFollowedError), 
-										holder.title.getText().toString(),toBeAdded);
+										holder.title.getText().toString());
 								SoftwareUtilities.MyErrorDialogFactory(v.getContext(), msg);
 							}
 

@@ -2,15 +2,17 @@
 
     <item
         android:id="@+id/item_action_settings"
-        android:orderInCategory="100"
+        android:orderInCategory="1"
         android:showAsAction="never"
         android:title="@string/action_settings"/>
     <item 
         android:id="@+id/item_about"
+        android:orderInCategory="3"
         android:title="@string/menu_item_about"/>
     
     <item 
         android:id="@+id/item_contact_developer"
+        android:orderInCategory="2"
         android:title="@string/menu_item_contact_developer"/>
     
      <!-- 

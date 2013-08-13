@@ -79,6 +79,9 @@ public class FollowedSeriesSectionFragment extends MyFragment {
 	public void onResume(){
 		super.onResume();
 		Debug.setPrintDebugMSG(rootView.getContext());
+		if (isToBeUpdated){
+			this.loadListView();
+		}
 	}
 
 	@Override
@@ -194,6 +197,11 @@ public class FollowedSeriesSectionFragment extends MyFragment {
 
 									@Override
 									public void onNegativeResponse() {
+										// Nothing to do
+									}
+									
+									@Override
+									public void onNeutralResponse() {
 										// Nothing to do
 									}
 								});
