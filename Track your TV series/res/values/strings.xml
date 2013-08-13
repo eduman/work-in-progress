@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Track your TV series</string>
+    <string name="app_developer_email">patti.edoardo@gmail.com</string>
+    <string name="app_developer_name">Edoardo Patti</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_followed">Followed</string>
+    <string name="title_search">Search</string>
+    <string name="nullString"></string>
+    <!-- About Colors -->
+    <string name="whiteColor">#FFFFFF</string>
+    <string name="blueColor">#07a5df</string>
+
+    <!-- About menu -->
+    <string name="menu_settings">Settings</string>
+    <string name="menu_item_about">About</string>
+    <string name="menu_item_contact_developer">Contact the developer</string>
+    
+    <!-- About Sending email -->
+    <string name="send_email_subject">user feedback</string>
+    <string name="send_email_action">Send Email</string>
+    
+    <!-- About Preference Settings -->
+    <string name="preference_category_internetSettings">Internet Settings</string>
+    <string name="preference_wifi">Wi-Fi</string>
+    <string name="preference_data_roaming">Mobile Data</string>
+    <string name="preference_clear_memory_cache">Clear memory cache</string>
+    <string name="preference_clear_disc_cache">Clear disc cache</string>
+    <string name="preference_category_cacheSettings">Cache Settings</string>
+    <string name="preference_category_debug">Debug</string>
+    <string name="preference_debug">Print debug messages</string>
+    <string name="preference_clearDiscCacheMsg">Do you really want to clear the disc cache? This will erase all the stored posters about followed series</string>
+    <string name="preference_clearedDiscCacheMsg">Disc cache cleared</string>
+    <string name="preference_clearMemoryCacheMsg">Do you really want to clear the memory cache? This will erase all the stored posters about followed series</string>
+    <string name="preference_clearedMemoryCacheMsg">Memory cache cleared</string>
+
+    <!-- Preference category keys -->
+    <string name="preference_category_internetSettings_key">preference_category_internetSettings_key</string>
+    <string name="preference_category_cacheSettings_key">preference_category_cacheSettings_key</string>
+    <string name="preference_category_debug_key">preference_category_debug_key</string>
+    <!-- Preference keys -->
+    <string name="preference_wifiSettings_key">preference_wifiSettings_key</string>
+    <string name="preference_data_roamingSettings_key">preference_3gSettings_key</string>
+    <string name="preference_clear_memory_cache_key">preference_clear_memory_cache_key</string>
+    <string name="preference_clear_disc_cache_key">preference_clear_disc_cache_key</string>
+    <string name="preference_debug_key">preference_debug_key</string>
+
+    <!-- About search_fragment -->
+    <string name="searchFragmentSearchButton">Search</string>
+    <string name="searchFragmentTitleSearchLabel">Search by Title: </string>
+    <!-- series list row -->
+    <string name="searchedSeriesListRow_followButton">Follow</string>
+    <string name="searchedSeriesListRow_followedButton">Followed</string>
+    <string name="searchedSeriesListRow_overview">Overview</string>
+
+    <!-- About followed fragment -->
+    <!-- series list row -->
+    <string name="followedSeriesListRow_title">Title</string>
+    <string name="followedSeriesListRow_comment">Comment</string>
+    <string name="followedSeriesListRow_poster">TV Serie\'s Poster</string>
+    <string name="followedSeriesListRow_unfollowButton">Unfollow</string>
+    <string name="followedSeriesListRow_season">Following season: </string>
+    <string name="followedSeriesListRow_episode">Last viewed episode: </string>
+
+    <!-- Info Messages -->
+    <string name="info">Info</string>
+    <string name="unfollowFollowedSerie">Do you really want to unfollow the TV serie?</string>
+    <string name="serieAddedInFollowingInfo">Now you are following the serie \"%1$s\" with the id: %2$s</string>
+    <string name="searchedSerieNotFound">Can not find any TV series</string>
+    <string name="unableToFollowSearchedSerie">Unable to follow the selected serie</string>
+
+    <!-- Error Messages -->
+    <string name="error">Error</string>
+    <string name="searchByTitleInsertError">Enter the TV serie\'s title to be searched</string>
+    <string name="serieAlreadyFollowedError">The serie \"%1$s\" with the id: %2$s is already followed</string>
+
+</resources>

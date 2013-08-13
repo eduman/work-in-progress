@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dip" >
+
+    <ImageView
+        android:id="@+id/followed_series_list_row_image"
+        android:layout_width="50dip"
+        android:layout_height="50dip"
+        android:contentDescription="@string/followedSeriesListRow_poster" >
+    </ImageView>
+
+    <TextView
+        android:id="@+id/followed_series_list_row_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dip"
+        android:layout_toLeftOf="@+id/followed_series_list_unfollowButton"
+        android:layout_toRightOf="@id/followed_series_list_row_image"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="@string/followedSeriesListRow_title"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Button
+        android:id="@+id/followed_series_list_unfollowButton"
+        android:layout_width="100dip"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/followed_series_list_row_image"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="14dp"
+        android:focusable="false"
+        android:text="@string/followedSeriesListRow_unfollowButton"
+        android:textColor="#FFFFFF" 
+        android:background="@drawable/my_button"/>
+
+    <TextView
+        android:id="@+id/followed_series_list_row_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/followed_series_list_unfollowButton"
+        android:layout_alignLeft="@+id/followed_series_list_row_title"
+        android:layout_alignRight="@+id/followed_series_list_row_title"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="@string/followedSeriesListRow_comment"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#6b71f1" />
+
+    <TextView
+        android:id="@+id/followed_series_list_row_season"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/followed_series_list_row_image"
+        android:layout_below="@+id/followed_series_list_row_image"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="@string/followedSeriesListRow_season"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#6b71f1" />
+
+    <TextView
+        android:id="@+id/followed_series_list_row_episode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/followed_series_list_row_season"
+        android:layout_below="@+id/followed_series_list_row_season"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="@string/followedSeriesListRow_episode"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#6b71f1" />
+
+    <TextView
+        android:id="@+id/followed_series_list_row_serieID"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_alignLeft="@+id/followed_series_list_row_episode"
+        android:layout_below="@+id/followed_series_list_row_episode"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="@string/nullString"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+</RelativeLayout>

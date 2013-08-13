@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dip" >
+
+    <ImageView
+        android:id="@+id/searched_series_list_row_image"
+        android:layout_width="50dip"
+        android:layout_height="50dip"
+        android:contentDescription="@string/followedSeriesListRow_poster" >
+    </ImageView>
+
+    <TextView
+        android:id="@+id/searched_series_list_row_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dip"
+        android:layout_toLeftOf="@+id/searched_series_list_unfollowButton"
+        android:layout_toRightOf="@id/searched_series_list_row_image"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="@string/followedSeriesListRow_title"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Button
+        android:id="@+id/searched_series_list_unfollowButton"
+        android:layout_width="100dip"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/searched_series_list_row_image"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="14dp"
+        android:focusable="false"
+        android:text="@string/searchedSeriesListRow_followButton" 
+        android:textColor="#FFFFFF" 
+        android:background="@drawable/my_button"/>
+
+    <TextView
+        android:id="@+id/searched_series_list_row_overview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/searched_series_list_row_serieID"
+        android:layout_alignLeft="@+id/searched_series_list_row_title"
+        android:layout_alignRight="@+id/searched_series_list_row_title"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="@string/searchedSeriesListRow_overview"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#6b71f1" />
+
+    <TextView
+        android:id="@+id/searched_series_list_row_serieID"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_alignLeft="@+id/searched_series_list_row_image"
+        android:layout_below="@+id/searched_series_list_row_image"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="@string/nullString"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+</RelativeLayout>
